@@ -9,11 +9,11 @@ services:
       target: pgstac
     platform: linux/amd64
     environment:
-      - POSTGRES_USER=username
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=kyfromabove
+      - POSTGRES_PASSWORD=kyfromabove
       - POSTGRES_DB=postgis
-      - PGUSER=username
-      - PGPASSWORD=password
+      - PGUSER=user
+      - PGPASSWORD=pw
       - PGDATABASE=postgis
     ports:
       - "5439:5432"
@@ -31,8 +31,8 @@ services:
     platform: linux/amd64
     environment:
       - PGHOST=pgstac
-      - PGUSER=username
-      - PGPASSWORD=password
+      - PGUSER=user
+      - PGPASSWORD=pw
       - PGDATABASE=postgis
     depends_on:
       - pgstac
