@@ -7,7 +7,7 @@ services:
       network: host
       dockerfile: docker/pgstac/Dockerfile
       target: pgstac
-    platform: linux/amd64
+    platform: windows/amd64
     environment:
       - POSTGRES_USER=username
       - POSTGRES_PASSWORD=password
@@ -20,21 +20,5 @@ services:
     volumes:
       - pgstac-pgdata:/var/lib/postgresql/data
     command: postgres
-  pypgstac:
-    container_name: pypgstac
-    image: pypgstac
-    build:
-      context: .
-      network: host
-      dockerfile: docker/pypgstac/Dockerfile
-      target: pypgstac
-    platform: linux/amd64
-    environment:
-      - PGHOST=pgstac
-      - PGUSER=username
-      - PGPASSWORD=password
-      - PGDATABASE=postgis
-    depends_on:
-      - pgstac
 volumes:
   pgstac-pgdata:
