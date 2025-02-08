@@ -17,8 +17,8 @@ services:
       - PGDATABASE=postgis
     ports:
       - "5439:5432"
-    volumes:
-      - pgstac-pgdata:/var/lib/postgresql/data
+    # volumes:
+    #   - pgstac-pgdata:/var/lib/postgresql/data
     command: postgres
 volumes:
   pgstac-pgdata:
