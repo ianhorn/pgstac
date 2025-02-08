@@ -9,11 +9,11 @@ services:
       target: pgstac
     platform: windows/amd64
     environment:
-      - POSTGRES_USER=username
-      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=postgis
-      - PGUSER=username
-      - PGPASSWORD=password
+      - PGUSER=postgis
+      - PGPASSWORD=postgis
       - PGDATABASE=postgis
     ports:
       - "5439:5432"
